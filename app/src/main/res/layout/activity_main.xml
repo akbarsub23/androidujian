@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D2137">
+
+    <!-- Top bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/topbar_bg"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="8dp"
+        android:elevation="6dp">
+
+        <ImageView
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:src="@drawable/logo_smkn"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:text="SMKN 1 GEMPOL — LMS"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <!-- Refresh Button -->
+        <ImageButton
+            android:id="@+id/btnRefresh"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="4dp"
+            android:src="@android:drawable/ic_menu_rotate"
+            android:background="@drawable/btn_icon_bg"
+            android:tint="#4DBAFF"
+            android:contentDescription="Refresh"
+            android:padding="8dp" />
+
+        <!-- Exit Button -->
+        <android.widget.Button
+            android:id="@+id/btnExit"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="✕ Exit"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:paddingHorizontal="14dp"
+            android:background="@drawable/btn_exit_topbar" />
+
+    </LinearLayout>
+
+    <!-- Progress bar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@id/topBar"
+        android:progressTint="#4DBAFF"
+        android:progressBackgroundTint="#1A3A5C"
+        android:max="100"
+        android:visibility="visible" />
+
+    <!-- SwipeRefreshLayout wrapping WebView -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/progressBar">
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!-- Error Layout (above swipe layout) -->
+    <LinearLayout
+        android:id="@+id/errorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/progressBar"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp"
+        android:background="@drawable/gradient_bg"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚠"
+            android:textSize="52sp"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Koneksi Bermasalah"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/errorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="#B0D8F5"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.5" />
+
+        <android.widget.Button
+            android:id="@+id/btnRetry"
+            android:layout_width="180dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="28dp"
+            android:text="🔄  Coba Lagi"
+            android:textColor="#1A3A5C"
+            android:textStyle="bold"
+            android:background="@drawable/btn_enter_bg" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="💡 Atau tarik layar ke bawah untuk refresh"
+            android:textColor="#7099BB"
+            android:textSize="12sp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+</RelativeLayout>

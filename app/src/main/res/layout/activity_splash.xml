@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg">
+
+    <!-- Decorative top wave circle -->
+    <View
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-200dp"
+        android:background="@drawable/circle_overlay_top" />
+
+    <!-- Bottom decorative circle -->
+    <View
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="-150dp"
+        android:layout_marginEnd="-150dp"
+        android:background="@drawable/circle_overlay_bottom" />
+
+    <!-- Center Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingHorizontal="32dp">
+
+        <!-- Logo with glowing ring -->
+        <FrameLayout
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center">
+
+            <!-- Glow ring -->
+            <View
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:background="@drawable/logo_glow_ring" />
+
+            <!-- Logo -->
+            <ImageView
+                android:id="@+id/logoImage"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:src="@drawable/logo_smkn"
+                android:scaleType="fitCenter" />
+        </FrameLayout>
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="SMKN 1 GEMPOL"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:visibility="invisible" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/subtitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="SMK NEGERI 1 GEMPOL"
+            android:textColor="#E0F0FF"
+            android:textSize="14sp"
+            android:letterSpacing="0.2"
+            android:gravity="center"
+            android:visibility="invisible" />
+
+        <!-- Divider -->
+        <View
+            android:layout_width="60dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/divider_gradient" />
+
+        <!-- Tagline -->
+        <TextView
+            android:id="@+id/taglineText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Learning Management System"
+            android:textColor="#B0D8F5"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:fontFamily="sans-serif-light"
+            android:visibility="invisible" />
+
+        <!-- Enter Button -->
+        <Button
+            android:id="@+id/btnEnter"
+            android:layout_width="220dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="40dp"
+            android:text="🎓  MASUK LMS"
+            android:textColor="#1A3A5C"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:background="@drawable/btn_enter_bg"
+            android:elevation="8dp"
+            android:visibility="invisible" />
+
+        <!-- Exit Button -->
+        <Button
+            android:id="@+id/btnExit"
+            android:layout_width="160dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="12dp"
+            android:text="✕  Keluar"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:background="@drawable/btn_exit_bg"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <!-- Version tag bottom -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="v1.0 · SMKN 1 GEMPOL · Pasuruan"
+        android:textColor="#80FFFFFF"
+        android:textSize="11sp" />
+
+</RelativeLayout>
