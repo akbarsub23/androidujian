@@ -1,144 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/gradient_bg">
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/bg_splash">
 
-    <!-- Decorative top wave circle -->
-    <View
-        android:layout_width="500dp"
-        android:layout_height="500dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-200dp"
-        android:background="@drawable/circle_overlay_top" />
+    <View android:id="@+id/viewRing"
+        android:layout_width="136dp" android:layout_height="136dp"
+        android:background="@drawable/ring_gradient"
+        app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toTopOf="@id/layoutText"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" app:layout_constraintVertical_bias="0.4"/>
 
-    <!-- Bottom decorative circle -->
-    <View
-        android:layout_width="400dp"
-        android:layout_height="400dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="-150dp"
-        android:layout_marginEnd="-150dp"
-        android:background="@drawable/circle_overlay_bottom" />
+    <View android:layout_width="124dp" android:layout_height="124dp"
+        android:background="@drawable/circle_white"
+        app:layout_constraintTop_toTopOf="@id/viewRing" app:layout_constraintBottom_toBottomOf="@id/viewRing"
+        app:layout_constraintStart_toStartOf="@id/viewRing" app:layout_constraintEnd_toEndOf="@id/viewRing"/>
 
-    <!-- Center Content -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:paddingHorizontal="32dp">
+    <ImageView android:id="@+id/imgLogo"
+        android:layout_width="108dp" android:layout_height="108dp"
+        android:src="@drawable/logo_sekolah" android:scaleType="centerCrop"
+        android:background="@drawable/circle_white" android:clipToOutline="true"
+        app:layout_constraintTop_toTopOf="@id/viewRing" app:layout_constraintBottom_toBottomOf="@id/viewRing"
+        app:layout_constraintStart_toStartOf="@id/viewRing" app:layout_constraintEnd_toEndOf="@id/viewRing"/>
 
-        <!-- Logo with glowing ring -->
-        <FrameLayout
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:layout_gravity="center">
-
-            <!-- Glow ring -->
-            <View
-                android:layout_width="180dp"
-                android:layout_height="180dp"
-                android:background="@drawable/logo_glow_ring" />
-
-            <!-- Logo -->
-            <ImageView
-                android:id="@+id/logoImage"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_gravity="center"
-                android:src="@drawable/logo_smkn"
-                android:scaleType="fitCenter" />
-        </FrameLayout>
-
-        <!-- Title -->
-        <TextView
-            android:id="@+id/titleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="SMKN 1 GEMPOL"
-            android:textColor="#FFFFFF"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:letterSpacing="0.1"
-            android:gravity="center"
-            android:fontFamily="sans-serif-medium"
-            android:visibility="invisible" />
-
-        <!-- Subtitle -->
-        <TextView
-            android:id="@+id/subtitleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="SMK NEGERI 1 GEMPOL"
-            android:textColor="#E0F0FF"
-            android:textSize="14sp"
-            android:letterSpacing="0.2"
-            android:gravity="center"
-            android:visibility="invisible" />
-
-        <!-- Divider -->
-        <View
-            android:layout_width="60dp"
-            android:layout_height="3dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/divider_gradient" />
-
-        <!-- Tagline -->
-        <TextView
-            android:id="@+id/taglineText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Learning Management System"
-            android:textColor="#B0D8F5"
-            android:textSize="13sp"
-            android:gravity="center"
-            android:fontFamily="sans-serif-light"
-            android:visibility="invisible" />
-
-        <!-- Enter Button -->
-        <Button
-            android:id="@+id/btnEnter"
-            android:layout_width="220dp"
-            android:layout_height="52dp"
-            android:layout_marginTop="40dp"
-            android:text="🎓  MASUK LMS"
-            android:textColor="#1A3A5C"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:background="@drawable/btn_enter_bg"
-            android:elevation="8dp"
-            android:visibility="invisible" />
-
-        <!-- Exit Button -->
-        <Button
-            android:id="@+id/btnExit"
-            android:layout_width="160dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="12dp"
-            android:text="✕  Keluar"
-            android:textColor="#FFFFFF"
-            android:textSize="13sp"
-            android:background="@drawable/btn_exit_bg"
-            android:visibility="invisible" />
-
+    <LinearLayout android:id="@+id/layoutText"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:orientation="vertical" android:gravity="center" android:layout_marginTop="22dp"
+        app:layout_constraintTop_toBottomOf="@id/viewRing"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvBadge">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="SMK Negeri 1 Gempol" android:textSize="22sp" android:textStyle="bold"
+            android:textColor="@color/blue_deep"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="PASURUAN · JAWA TIMUR" android:textSize="11sp"
+            android:textColor="@color/blue_mid" android:letterSpacing="0.1" android:layout_marginTop="2dp"/>
     </LinearLayout>
 
-    <!-- Version tag bottom -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"
-        android:text="v1.0 · SMKN 1 GEMPOL · Pasuruan"
-        android:textColor="#80FFFFFF"
-        android:textSize="11sp" />
+    <TextView android:id="@+id/tvBadge"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="  ★  Computer Based Test  ★  "
+        android:textSize="11sp" android:textColor="@color/white"
+        android:background="@drawable/bg_badge"
+        android:paddingHorizontal="16dp" android:paddingVertical="5dp" android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutText"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.42"/>
 
-</RelativeLayout>
+    <ProgressBar android:layout_width="36dp" android:layout_height="36dp"
+        android:indeterminateTint="@color/blue_mid" android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
